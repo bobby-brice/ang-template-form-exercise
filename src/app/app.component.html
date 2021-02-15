@@ -14,9 +14,11 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
+      <!-- #signupForm is our viewChild elem ref -->
       <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="email">Mail</label>
+          <!-- ngModel establishes a formControlGroup in Angular while #email binds to our ngIf condition -->
           <input type="email" id="email" ngModel name="email" required email class="form-control" #email="ngModel">
           <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
         </div>
